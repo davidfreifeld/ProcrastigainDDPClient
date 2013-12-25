@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.procrastigain.mobile"
+    android:versionCode="3"
+    android:versionName="0.8.1" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <supports-screens
+        android:largeScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.procrastigain.mobile.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.procrastigain.mobile.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.procrastigain.mobile.LoginActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.procrastigain.mobile.DatePickerFragment"
+            android:label="@string/title_activity_date_picker_fragment" >
+        </activity>
+        <activity
+            android:name="com.procrastigain.mobile.MyTasksActivity"
+            android:label="@string/title_activity_my_tasks" >
+        </activity>
+        <activity
+            android:name="com.procrastigain.mobile.NewTaskActivity"
+            android:label="@string/title_activity_new_task"
+            android:parentActivityName="com.procrastigain.mobile.MyTasksActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.procrastigain.mobile.MyTasksActivity" />
+        </activity>
+
+        <activity
+            android:name="com.procrastigain.mobile.EditTaskActivity"
+            android:label="@string/title_activity_edit_task"
+            android:parentActivityName="com.procrastigain.mobile.MyTasksActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.procrastigain.mobile.MyTasksActivity" />
+        </activity>
+    </application>
+
+</manifest>

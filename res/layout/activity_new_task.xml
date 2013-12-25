@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_new_task_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+    
+    <TextView
+        android:id="@+id/id_new_task_title_tag"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" 
+    	android:textSize="18sp"
+    	android:text="@string/new_task_title" />
+    
+    <EditText
+        android:id="@+id/id_new_task_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_new_task_title_tag"
+        android:hint="@string/hint_new_task_title" 
+        android:layout_marginBottom="16dp" />
+    
+    <TextView
+        android:id="@+id/id_new_task_time_tag"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" 
+    	android:text="@string/new_task_time" 
+    	android:textSize="18sp" 
+    	android:layout_below="@id/id_new_task_title" />
+    
+    <Spinner
+	    android:id="@+id/id_new_task_hours_spinner"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" 
+	    android:layout_below="@id/id_new_task_time_tag" />
+    
+    <TextView
+        android:id="@+id/id_new_task_hours_tag"
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" 
+    	android:text="@string/new_task_hours" 
+    	android:layout_toRightOf="@id/id_new_task_hours_spinner"
+    	android:layout_alignBottom="@id/id_new_task_hours_spinner" 
+    	android:layout_marginLeft="8dp" />
+	    
+	<Spinner
+	   	android:id="@+id/id_new_task_minutes_spinner"
+	   	android:layout_width="wrap_content"
+	   	android:layout_height="wrap_content" 
+	   	android:layout_toRightOf="@id/id_new_task_hours_tag" 
+	   	android:layout_below="@id/id_new_task_time_tag" 
+	   	android:layout_marginLeft="16dp" />
+	    
+	<TextView
+	    android:id="@+id/id_new_task_minutes_tag"
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" 
+    	android:text="@string/new_task_minutes" 
+    	android:layout_toRightOf="@id/id_new_task_minutes_spinner" 
+    	android:layout_alignBottom="@id/id_new_task_minutes_spinner" 
+    	android:layout_marginLeft="8dp" />
+	
+	<TextView
+	    android:id="@+id/id_new_task_appeal_tag"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" 
+    	android:text="@string/new_task_appeal" 
+    	android:textSize="18sp" 
+    	android:layout_below="@id/id_new_task_hours_spinner" 
+    	android:paddingBottom="10dp" 
+    	android:paddingTop="16dp"/>
+	
+	<LinearLayout
+	    android:id="@+id/id_appeal_layout"
+	    android:layout_below="@id/id_new_task_appeal_tag"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal" >
+
+        <TextView
+        	android:layout_width="wrap_content"
+    		android:layout_height="wrap_content" 
+    		android:text="@string/new_task_hate" />
+        
+        <SeekBar
+            android:layout_weight="1"
+	        android:id="@+id/id_new_task_appeal_seekbar"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content" 
+	        android:max="8"
+	        android:progress="4" />
+        
+        <TextView
+        	android:layout_width="wrap_content"
+    		android:layout_height="wrap_content" 
+    		android:text="@string/new_task_love" />
+        
+    </LinearLayout>    
+    
+	<TextView
+	    android:id="@+id/id_new_task_date_tag"
+	    android:layout_marginTop="16dp"
+	    android:layout_marginBottom="12dp"
+	    android:layout_below="@id/id_appeal_layout"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" 
+    	android:text="@string/new_task_date" 
+    	android:textSize="18sp" />
+	
+	<TextView
+	    android:layout_below="@id/id_new_task_date_tag"
+        android:id="@+id/id_new_task_date"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" 
+    	android:text="@string/new_task_date" 
+    	android:textSize="16sp"
+    	android:padding="12dp" />
+	
+	<Button 
+	    android:layout_toRightOf="@id/id_new_task_date"
+	    android:layout_below="@id/id_new_task_date_tag"
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:text="@string/new_task_pick_date" 
+	    android:onClick="showDatePickerDialog" />
+	
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/id_new_task_date"
+	    android:id="@+id/new_task_button"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/button_new_task_submit"
+    	android:onClick="saveNewTask" />
+	
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"  >
+    
+	<RelativeLayout  
+	    android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="16dp"
+		android:layout_marginRight="16dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginBottom="8dp"
+		android:padding="12dp"
+		android:background="@color/black"  >
+		
+	    <TextView
+	    	android:id="@+id/id_task_title"
+	    	android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:textSize="18sp"
+			android:textColor="@color/white"
+			android:text="@string/task_name_placeholder" />
+	    
+	    <TextView 
+	        android:layout_marginLeft="8dp"
+	        android:id="@+id/id_task_date"
+	        android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:textSize="12sp"
+			android:textColor="@color/LightSlateGray"
+			android:layout_alignBottom="@id/id_task_title"
+			android:layout_toRightOf="@id/id_task_title" />
+	    
+	    <TextView 
+	        android:id="@+id/id_task_edit"
+	        android:layout_width="wrap_content" 
+	 		android:layout_height="wrap_content" 
+	 		android:text="@string/task_edit" 
+	 		android:layout_below="@id/id_task_title" 
+	 		android:textColor="@color/p_blue" />
+	    
+	    <Button 
+	        android:id="@+id/id_task_work_button"
+	    	android:layout_width="wrap_content" 
+	 		android:layout_height="wrap_content" 
+	 		android:text="@string/task_work" 
+	 		android:textSize="12sp"
+	 		android:textColor="@color/white"
+	 		android:layout_alignParentRight="true" />
+	    
+	</RelativeLayout>
+	
+</LinearLayout>
